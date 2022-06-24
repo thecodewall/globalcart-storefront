@@ -1,8 +1,9 @@
 @extends('layout.master')
 
 @section('content')
+    <div class="container">
     <h1>Login</h1>
-    <form action="{{ route('shop.login.store') }}" method="post">
+        <form action="{{ route('shop.login.store') }}" method="post">
             @csrf
 
             <div class="form-group">
@@ -37,5 +38,5 @@
 
             <button type="submit" class="btn btn-primary btn-block mb-4">登录</button>
         </form>
-
+    </div>
 @endsection
