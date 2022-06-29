@@ -56,7 +56,10 @@ class AddressRepo
      */
     public static function delete($id)
     {
-        Address::query()->find($id)->delete();
+        $address = Address::query()->find($id);
+        if ($address) {
+            $address->delete();
+        }
     }
 
     public static function listByCustomer($customer)
