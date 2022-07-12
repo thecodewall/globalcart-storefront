@@ -26,11 +26,11 @@
           <div>@{{ node.label }}</div>
           <div class="right">
             <el-tooltip class="item" effect="dark" content="创建文件夹" placement="top">
-              <span><i class="el-icon-circle-plus-outline"></i></span>
+              <span @click.stop="() => {openInputBox('addFolder', data)}"><i class="el-icon-circle-plus-outline"></i></span>
             </el-tooltip>
 
             <el-tooltip class="item" effect="dark" content="重命名" placement="top">
-              <span><i class="el-icon-edit"></i></span>
+              <span @click.stop="() => {openInputBox('folder', data)}"><i class="el-icon-edit"></i></span>
             </el-tooltip>
 
             <el-tooltip class="item" effect="dark" content="删除" placement="top">
@@ -45,9 +45,9 @@
     <div class="filemanager-content" v-loading="loading" element-loading-background="rgba(255, 255, 255, 0.5)">
       <div class="content-head">
         <div class="left">
-          <el-link :underline="false" :disabled="editingFileIndex === null" icon="el-icon-edit">下载</el-link>
-          <el-link :underline="false" :disabled="editingFileIndex === null" icon="el-icon-edit">删除</el-link>
-          <el-link :underline="false" :disabled="editingFileIndex === null" icon="el-icon-edit">重命名</el-link>
+          <el-link :underline="false" :disabled="editingFileIndex === null" icon="el-icon-download">下载</el-link>
+          <el-link :underline="false" :disabled="editingFileIndex === null" @click="deleteFile" icon="el-icon-delete">删除</el-link>
+          <el-link :underline="false" :disabled="editingFileIndex === null" @click="openInputBox('image')" icon="el-icon-edit">重命名</el-link>
         </div>
         <div class="right"><el-button size="mini" type="primary">上传文件</el-button></div>
       </div>
@@ -226,6 +226,36 @@
 
       fileChecked() {
         console.log(this.editingFileIndex)
+      },
+
+      deleteFile() {
+        this.$confirm('是否要删除选中文件', '提示', {
+          type: 'warning'
+        }).then(() => {
+          this.files.splice(this.editingFileIndex, 1);
+          this.$message({type: 'success',message: '删除成功!'});
+        }).catch(_=>{});
+      },
+
+      openInputBox(type, data) {
+        // console.log(data)
+        // console.log(this.editingFileIndex)
+        this.$prompt('', '重命名', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          inputPattern: /^.+$/,
+          inputErrorMessage: '不能为空'
+        }).then(({ value }) => {
+          this.$message({
+            type: 'success',
+            message: '你的邮箱是: ' + value
+          });
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: '取消输入'
+          });
+        });
       }
     },
     // 在实例初始化之后，组件属性计算之前，如data属性等
@@ -244,7 +274,7 @@
 
   $(document).ready(function() {
     $(document).on('click', function (e) {
-      if ($(e.target).closest('.content-center .image-list').length === 0) {
+      if ($(e.target).closest('.content-center .image-list, .content-head, .content-footer').length === 0) {
         app.editingFileIndex = null;
         app.files.map(e => e.selected = false)
       }
