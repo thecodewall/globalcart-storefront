@@ -11,9 +11,7 @@
 
 namespace Beike\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Plugin extends Model
+class Plugin extends Base
 {
     protected $fillable = ['type', 'code'];
 }
