@@ -9,7 +9,13 @@
  * @created    2022-07-22 17:58:14
  * @modified   2022-07-22 17:58:14
  */
+
+namespace Beike\Shop\Services\TotalServices;
+
 class ShippingService
 {
+    public static function getTotal()
+    {
 
+    }
 }
