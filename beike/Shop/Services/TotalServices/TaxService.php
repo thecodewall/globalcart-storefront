@@ -12,10 +12,18 @@
 
 namespace Beike\Shop\Services\TotalServices;
 
+use Beike\Shop\Services\TotalService;
+
 class TaxService
 {
-    public static function getTotal()
+    public static function getTotal(TotalService $totalService)
     {
-
+        $amount = $totalService->amount * 0.02;
+        return [
+            'code' => 'shipping',
+            'title' => '运费',
+            'amount' => $amount,
+            'amount_format' => currency_format($amount)
+        ];
     }
 }
