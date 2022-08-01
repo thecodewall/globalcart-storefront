@@ -8,7 +8,7 @@
       <a class="nav-link active" aria-current="page" href="{{ admin_route('admin_users.index') }}">后台用户</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="{{ admin_route('admin_user_groups.index') }}">后台用户组</a>
+      <a class="nav-link" href="{{ admin_route('admin_roles.index') }}">用户角色</a>
     </li>
   </ul>
 
