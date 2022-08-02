@@ -12,7 +12,7 @@
 return [
     'orders_index' => 'Index',
     'orders_create' => 'Create',
-    'orders_show' => 'Detail',
-    'orders_edit' => 'Edit',
-    'orders_delete' => 'Delete'
+    'orders_edit' => 'Detail',
+    'orders_update' => 'Update',
+    'orders_delete' => 'Delete',
 ];
