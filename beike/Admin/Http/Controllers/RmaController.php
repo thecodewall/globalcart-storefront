@@ -21,7 +21,7 @@ class RmaController extends Controller
 {
     public function index(Request $request)
     {
-        $rmas = RmaRepo::list($request->only('name', 'email', 'telephone', 'product_name', 'model', 'type', 'status'));
+        $rmas = RmaRepo::list($request->only('name', 'email', 'telephone', 'product_name', 'sku', 'type', 'status'));
         $data = [
             'rmas' => $rmas,
         ];
