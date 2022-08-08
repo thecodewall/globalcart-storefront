@@ -12,4 +12,5 @@
 return [
     'settings_index' => 'Setting',
     'design_index' => 'Design Builder',
+    'design_footer_index' => 'Design Footer',
 ];
