@@ -13,4 +13,12 @@ return [
     'login' => 'Login',
     'new_account' => 'New Account',
     'index' => 'Account',
+
+    'wishlist' => [
+        'index' => 'Wishlist',
+    ],
+
+    'order' => [
+        'index' => 'Order List',
+    ]
 ];
