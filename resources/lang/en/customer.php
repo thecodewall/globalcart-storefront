@@ -14,4 +14,6 @@ return [
     'email' => 'Email',
     'from' => 'From',
     'customer_group' => 'Group',
+    'password' => 'Password',
+    'customer_group_id' => 'Customer Group',
 ];
