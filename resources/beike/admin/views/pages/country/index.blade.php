@@ -111,9 +111,9 @@
 
       methods: {
         loadData() {
-          // $http.get(`brands?page=${this.page}`).then((res) => {
-          //   this.brands = res.data.brands;
-          // })
+          $http.get(`countries?page=${this.page}`).then((res) => {
+            this.country = res.data.country;
+          })
         },
 
         checkedCreate(type, index) {
@@ -148,7 +148,8 @@
             $http[type](url, this.dialog.form).then((res) => {
               this.$message.success(res.message);
               if (this.dialog.type == 'add') {
-                this.country.data.push(res.data)
+                // this.country.data.push(res.data)
+                this.loadData();
               } else {
                 this.country.data[this.dialog.index] = res.data
               }
@@ -167,7 +168,8 @@
           }).then(() => {
             $http.delete('countries/' + id).then((res) => {
               this.$message.success(res.message);
-              self.country.data.splice(index, 1)
+              this.loadData();
+              // self.country.data.splice(index, 1)
             })
           }).catch(()=>{})
         },
