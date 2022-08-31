@@ -19,6 +19,7 @@ class RmaDetail extends JsonResource
     public function toArray($request): array
     {
         $types = RmaRepo::getTypes();
+        $statuses = RmaRepo::getStatuses();
 
         return [
             'id' => $this->id,
@@ -27,7 +28,7 @@ class RmaDetail extends JsonResource
             'opened' => $this->opened,
             'type' => $types[$this->type],
             'comment' => $this->comment,
-            'status' => $this->status,
+            'status' => $statuses[$this->status],
             'created_at' => time_format($this->created_at),
             'email' => $this->email,
             'telephone' => $this->telephone,
