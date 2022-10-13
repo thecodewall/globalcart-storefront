@@ -12,4 +12,5 @@
 return [
     'marketing_list' => '插件市场',
     'marketing_show' => '插件详情',
+    'set_token' => '设置 Token',
 ];
