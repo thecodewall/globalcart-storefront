@@ -14,15 +14,12 @@ class Textarea extends Component
 
     public bool $required;
 
-    public bool $html;
-
-    public function __construct(string $name, string $title, ?string $value, bool $required = false, bool $html = false)
+    public function __construct(string $name, string $title, ?string $value, bool $required = false)
     {
         $this->name     = $name;
         $this->title    = $title;
         $this->value    = $value;
         $this->required = $required;
-        $this->html     = $html;
     }
 
     public function render()
