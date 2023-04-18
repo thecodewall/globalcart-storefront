@@ -28,10 +28,11 @@ class GoVipTest extends DuskTestCase
                 ->pause(2000)
                 //2.点击vip图标
                 ->clickLink(admin_top['VIP'])
+                ->pause(2000)
                 //3.切换到第二个窗口并获取断言
                 ->driver->switchTo()->window($browser->driver->getWindowHandles()[1]);
-                $browser->assertSee(admin_top['vip_assert'])
-                ->pause(9000);
+                $browser->assertSee(admin_assert['vip_assert'])
+
             ;
         });
     }
