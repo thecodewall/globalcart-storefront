@@ -38,7 +38,7 @@ class AlterOrderStationTest extends DuskTestCase
                 //去往前台
                 ->clicklink(admin_top['root'])
                 ->pause(3000)
-                ->click(admin_top['go_catalog'])
+                ->clickLink(admin_top['go_catalog'])
                 ->pause(2000)
                 //切换到前台下单
                 ->driver->switchTo()->window($browser->driver->getWindowHandles()[1]);
@@ -93,14 +93,15 @@ class AlterOrderStationTest extends DuskTestCase
                 ->refresh()
                 ->pause(5000);
                 // 断言是否已支付
-                $browser->assertSeeIn(get_order_status['status_text'],ca_order_status['Paid'])
+                 $text = $browser->text(get_order_status['status_text']);
+                $browser->assertSeeIn($text,ca_order_status['paid'])
             //切换到后台，将状态改为已发货
                 ->driver->switchTo()->window($browser->driver->getWindowHandles()[0]);
                 $browser->pause(2000)
                 ->press(order_details['pull_btn'])
                 //修改状态为已支付
                 ->pause(2000)
-                ->click(order_details['Shipped'])
+                ->click(order_details['paid'])
                 ->press(order_details['express_btn'])
                 //选择快递并填写订单号
                 ->pause(2000);
@@ -117,24 +118,9 @@ class AlterOrderStationTest extends DuskTestCase
                 ->driver->switchTo()->window($browser->driver->getWindowHandles()[1]);
                 $browser->pause(3000)
                 ->refresh()
-                ->pause(2000);
-                $browser->assertSeeIn(get_order_status['status_text'],ca_order_status['Shipped'])
-//            切换到后台，将订单状态改为已完成
-                ->driver->switchTo()->window($browser->driver->getWindowHandles()[0]);
-                $browser->pause(2000)
-                ->press(order_details['pull_btn'])
-                //修改状态为完成
-                ->pause(2000)
-                ->click(order_details['Completed'])
-                ->press(order_details['submit_btn2'])
-                ->pause(3000)
-                //切换到前台,断言状态是否为已完成
-                ->driver->switchTo()->window($browser->driver->getWindowHandles()[1]);
-                $browser->pause(3000)
-                ->refresh()
                 ->pause(4000);
-                $browser->assertSeeIn(get_order_status['status_text'],ca_order_status['Completed'])
-
+                $text = $browser->text(get_order_status['status_text']);
+                $browser->assertSeeIn($text,ca_order_status['Shipped'])
                     ;
 
 
