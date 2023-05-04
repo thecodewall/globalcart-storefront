@@ -44,7 +44,7 @@ class CloseVisiterCheckoutTest extends DuskTestCase
                 //点击结游客结账 禁用
                 ->press(system_set['close_visitor_checkout'])
                 //点击保存
-                ->press(common['save_btn'])
+                ->press(system_common['save_btn'])
                 ->pause(2000)
         //去往前台验证
                 ->click(admin_top['root'])
