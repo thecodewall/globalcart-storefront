@@ -211,19 +211,6 @@ php artisan migrate
 
 ---
 
-## 📄 开源协议
-
-BeikeShop 是基于 **OSL-3.0** 协议发布的开源软件。
-
----
-
-特别感谢
-- **插件开发者**：撸串青年、老柳、Aegis、特仑叔、olives等
-- **PR贡献者**：nilsir、what_村长、tanxiaoyong、Lucky、So、licy、老北、Teemo等
-感谢你们参与到BeikeShop的开发中，共同为BeikeShop添砖加瓦！
-
-感谢所有参与 BeikeShop 开发的贡献者，让项目变得更好！
-
 QQ交流群：1033903216
 
 ---

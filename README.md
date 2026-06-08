@@ -241,22 +241,6 @@ BCMath, Ctype, cURL, DOM, Fileinfo, JSON, Mbstring, OpenSSL, PCRE, PDO, Tokenize
 
 
 ---
-## License
-
-BeikeShop is open‑source software licensed under the [![License: OSL-3.0](https://img.shields.io/badge/License-OSL--3.0-blue.svg)](https://opensource.org/licenses/OSL-3.0)
-
-
----
-
-## Special Thanks
-
-- **Plugin Developers**: Lu Chuan Youth, Lao Liu, Aegis, Telon Uncle, Olives, and others.
-
-- **Contributors**: nilsir, what_village_head, tanxiaoyong, Lucky, So, licy, Lao Bei, Teemo, and more.
-
-Thank you to everyone who contributes to making BeikeShop better.
-
----
 
 **Note**
 Please retain the original copyright notice.
