@@ -105,7 +105,7 @@ BeikeShop can be installed via **package distribution**, **source code**, or **D
 ### II. Source Code Installation
 
 ```bash
-git clone https://github.com/beikeshop/beikeshop.git
+git clone https://github.com/thecodewall/globalcart-storefront.git
 cd beikeshop
 composer install
 cp .env.example .env
